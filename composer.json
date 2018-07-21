@@ -1,0 +1,13 @@
+{
+  "name": "wpSections",
+  "description": "Plugin to help design website in a faster way using wordpress",
+  "keywords": [
+    "Wordpress",
+    "Layout"
+  ],
+  "license": "GLP-3.0",
+  "type": "library",
+  "version": "1.0.0",
+  "build_date": "",
+  "requires": ["wpOOP"]
+}

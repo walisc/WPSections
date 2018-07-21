@@ -1,0 +1,17 @@
+<div class="wpOOWCE_PageSelector">
+    <div >
+        <ol class="page_selector {{id}}">
+         {% for selectedChoice in selectedChoices %}
+                  <li id="{{selectedChoice.id}}" class="{{selectedChoice.type}}_section_type{% if selectedChoice.configureLink == ""  %}_no_config{% endif %}" >
+        	          <div>
+        		        {{ selectedChoice.name }} {% if selectedChoice.configureLink != ""  %} <span class="configure_section "><a href="{{selectedChoice.configureLink}}" target="_blank"> ( Configure ) </a></span> {% endif %}
+                     </div>
+                     <div>
+        		           - {{ selectedChoice.description }}
+                     </div>
+
+        	    </li>
+                {% endfor %}
+        </ol>
+    </div>
+</div>

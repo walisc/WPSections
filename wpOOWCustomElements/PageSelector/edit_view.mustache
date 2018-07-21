@@ -1,0 +1,36 @@
+<div class="wpOOWCE_PageSelector">
+    <div class="SelectableItems">
+        <p>Available</p>
+        <ol class="page_selector {{id}}">
+        {% for availableSection in availableChoices %}
+          <li id="{{availableSection.id}}" class="{{availableSection.type}}_section_type{% if availableSection.configureLink == ""  %}_no_config{% endif %}" >
+	          <div>
+		        {{ availableSection.name }} {% if availableSection.configureLink != ""  %} <span class="configure_section "><a href="{{availableSection.configureLink}}" target="_blank"> ( Configure ) </a></span> {% endif %}
+             </div>
+             <div>
+		           - {{ availableSection.description }}
+             </div>  
+
+	    </li>
+        {% endfor %}
+        </ol>
+    </div>
+    <div class="selectedItems">
+        <p>Selected</p>
+        <ol class="page_selector {{id}}">
+         {% for selectedChoice in selectedChoices %}
+                  <li id="{{selectedChoice.id}}" class="{{selectedChoice.type}}_section_type{% if selectedChoice.configureLink == ""  %}_no_config{% endif %}" >
+        	          <div>
+        		        {{ selectedChoice.name }} {% if selectedChoice.configureLink != ""  %} <span class="configure_section "><a href="{{selectedChoice.configureLink}}" target="_blank"> ( Configure ) </a></span> {% endif %}
+                     </div>
+                     <div>
+        		           - {{ selectedChoice.description }}
+                     </div>
+
+        	    </li>
+                {% endfor %}
+        </ol>
+    </div>
+</div>
+
+<input type="hidden" id="{{id}}_page_selector_input" name="{{id}}" value="{{value}}" />
