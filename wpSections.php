@@ -132,6 +132,7 @@ class wpSections{
 
     }
 
+    //TODO: consider error out when file not there
     private function LoadControllers(){
         $loaded_sections = [];
 
