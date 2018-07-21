@@ -13,9 +13,9 @@ class PageSelector extends BaseElement{
     function BaseScriptsToLoad(){
         $pluginURLPath = wpAPIUtilities::GetWpAPUriLocation(__DIR__);
 
-        $this->EnqueueElementBaseCSS("wpOOWCusPageSelector", sprintf("%s%s%s", $pluginURLPath, DIRECTORY_SEPARATOR, "PageSelector.css"),  [], []);
-        $this->EnqueueElementBaseScript("wpOOWCusPageSelectorJQuerySortable",  sprintf("%s%s%s", $pluginURLPath, DIRECTORY_SEPARATOR, "jquery-sortable.js"),  [], ["jquery"], "1.0.0", true);
-        $this->EnqueueElementBaseScript("wpOOWCusPageSelector", sprintf("%s%s%s", $pluginURLPath, DIRECTORY_SEPARATOR, "PageSelector.js"),  [], ["wpOOWCusPageSelectorJQuerySortable"], "1.0.0", true);
+        $this->EnqueueElementBaseCSS("wpOOWCusPageSelector", sprintf("%s%s%s", $pluginURLPath, URL_SEPARATOR, "PageSelector.css"),  [], []);
+        $this->EnqueueElementBaseScript("wpOOWCusPageSelectorJQuerySortable",  sprintf("%s%s%s", $pluginURLPath, URL_SEPARATOR, "jquery-sortable.js"),  [], ["jquery"], "1.0.0", true);
+        $this->EnqueueElementBaseScript("wpOOWCusPageSelector", sprintf("%s%s%s", $pluginURLPath, URL_SEPARATOR, "PageSelector.js"),  [], ["wpOOWCusPageSelectorJQuerySortable"], "1.0.0", true);
 
     }
     function ReadView($post){
