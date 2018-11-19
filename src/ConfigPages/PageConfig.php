@@ -1,5 +1,7 @@
 <?php
 
+namespace wpSections\ConfigPages;
+
 function CreatePageConfig($wpOOW, $viewableConfigurationSections){
 
     $page_configuration = $wpOOW->CreatePostType("_page_config", "Page Layout & Config", true); //TODO ID cant be too long

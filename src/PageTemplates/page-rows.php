@@ -23,7 +23,7 @@ foreach ($tjc_pages->Query()->Select()->Fetch() as $page)
                 if (array_key_exists($section, $GLOBALS["WP_SECTIONS_LOADED_CONTROLLERS"])) {
                     $section_details = $GLOBALS["WP_SECTIONS_LOADED_CONTROLLERS"][$section];
                     echo '<div id="'.$section_details->GetSectionId().'" >';
-                    $section_details->GetSectionView();
+                    get_template_part($section_details->GetSectionView());
                     echo '</div >';
                 }
                 else{

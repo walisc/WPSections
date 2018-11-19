@@ -7,7 +7,7 @@ class PageSelector extends BaseElement{
     {
         parent::__construct($id, $label, $permissions, $elementPath, $elementCssClasses);
         $this->availableChoices = $availableChoices;
-        
+
     }
 
     function BaseScriptsToLoad(){

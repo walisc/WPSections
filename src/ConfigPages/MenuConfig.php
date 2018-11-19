@@ -1,5 +1,7 @@
 <?php
 
+namespace wpSections\ConfigPages;
+
 function CreateMenuConfig($wpOOW, $page_configuration, $viewableConfigurationSections){
     // Static Pages
     $available_pages = [];

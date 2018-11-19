@@ -38,7 +38,7 @@ if (isset($_GET['vs'])) {
                     function loadSection($sectionId){
                         if (array_key_exists($sectionId, $GLOBALS["WP_SECTIONS_LOADED_CONTROLLERS"])) {
                             $section_details = $GLOBALS["WP_SECTIONS_LOADED_CONTROLLERS"][$sectionId];
-                            $section_details->GetSectionView();
+                            get_template_part($section_details->GetSectionView());
 
                         }
                         else{

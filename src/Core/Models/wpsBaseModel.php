@@ -1,6 +1,8 @@
 <?php
 
-abstract class wpsConfigModel{
+namespace wpSections\Core\wpsModels;
+
+abstract class wpsBaseModel{
 
     protected $sectionId = "";
     protected $configTitle = "";
@@ -16,25 +18,18 @@ abstract class wpsConfigModel{
         $this->showInMenu = $showInMenu;
         $this->dependencies = $dependencies;
         $this->wpOOW = $wpOOW;
-
-        $this->mainModel = $this->wpOOW->CreatePostType($this->GetConfigModelId(), $this->GetConfigModelMenuName() , $this->ShouldPersist(), ["show_in_menu" => $this->GetShowInMenu()]);
-    }
-
-    function GetUniqueFieldId($fieldName)
-    {
-        return sprintf("%s_%s", $this->sectionId, $fieldName);
     }
 
     //Mainly for backward comparability. Allows you to override to previous id's
-    function GetConfigModelId(){
+    function GetModelId(){
         return $this->sectionId ;
     }
 
-    function GetConfigModelUrlId(){
-        return $this->GetConfigModelId();
+    function GetModelUrlId(){
+        return $this->GetModelId();
     }
 
-    function GetConfigModelMenuName(){
+    function GetModelMenuName(){
         return $this->configTitle;
     }
 
@@ -42,10 +37,6 @@ abstract class wpsConfigModel{
         return $this->showInMenu;
     }
 
-    function ShouldPersist(){
-        return  true;
-    }
+    abstract function GetModelPage();
 
-    abstract function GetConfigModelPage();
-    
 }

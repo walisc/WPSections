@@ -1,5 +1,7 @@
 <?php
 
+namespace wpSections\ConfigPages;
+
 function CreateStaticPages($wpOOW){
     $static_pages_config = $wpOOW->CreatePostType("_static_pages", "Static Sections", true);
 

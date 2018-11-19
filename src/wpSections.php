@@ -1,11 +1,12 @@
 <?php
 
-include "Core/wpsController.php";
-include "Core/wpsConfigModel.php";
+namespace wpSections;
+
 include "wpOOWCustomElements/PageSelector/PageSelector.php";
 include "ConfigPages/MenuConfig.php";
 include "ConfigPages/PageConfig.php";
 include "ConfigPages/StaticPages.php";
+
 
 class wpSections{
 
@@ -69,7 +70,7 @@ class wpSections{
         
         foreach ($this->loadedModels as $sectionModelId => $sectionModel){
             
-            if ($sectionModel->GetType() == wpsSectionTypes::$CONFIG_VIEW)
+            if ($sectionModel->HasSectionUserView() == wpsSectionTypes::$CONFIG_VIEW)
             {
                 $configurationModel = $sectionModel->GetSectionConfigModel();
                 $this->sectionBaseMenu->AddChild($configurationModel->GetConfigModelPage());
@@ -82,7 +83,7 @@ class wpSections{
                     "type" => "configured" //static
                 ];
             }
-            elseif ($sectionModel->GetType() == wpsSectionTypes::$VIEW){
+            elseif ($sectionModel->HasSectionUserView()){
 
                 $viewableConfigurationSections[$sectionModel->GetSectionId()] = [
                     "id" => $sectionModel->GetSectionId(),
@@ -132,7 +133,6 @@ class wpSections{
 
     }
 
-    //TODO: consider error out when file not there
     private function LoadControllers(){
         $loaded_sections = [];
 
